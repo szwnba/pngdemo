@@ -12,6 +12,9 @@ const downloadBtn = document.getElementById('downloadBtn');
 // 存储原始图片数据
 let originalImageData = null;
 
+// 默认占位图片路径
+const placeholderImage = 'assets/images/placeholder.svg';
+
 // 监听文件输入变化
 fileInput.addEventListener('change', handleFileSelect);
 
@@ -52,6 +55,9 @@ function handleFileSelect(e) {
     const file = e.target.files[0];
     if (file) {
         handleFile(file);
+    } else {
+        // 如果用户取消了文件选择，恢复默认图片
+        resetToDefault();
     }
 }
 
@@ -112,16 +118,26 @@ function compressImage(imageData, quality) {
 
 // 格式化文件大小
 function formatFileSize(bytes) {
-    if (bytes === 0) return '0 Bytes';
+    if (bytes === 0) return '0 KB';
     const k = 1024;
     const sizes = ['Bytes', 'KB', 'MB', 'GB'];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
 }
 
+// 重置为默认状态
+function resetToDefault() {
+    originalImage.src = placeholderImage;
+    compressedImage.src = placeholderImage;
+    originalSize.textContent = '0 KB';
+    compressedSize.textContent = '0 KB';
+    originalImageData = null;
+    downloadBtn.disabled = true;
+}
+
 // 下载压缩后的图片
 downloadBtn.addEventListener('click', () => {
-    if (compressedImage.src) {
+    if (compressedImage.src && compressedImage.src !== placeholderImage) {
         const link = document.createElement('a');
         link.href = compressedImage.src;
         link.download = 'compressed_image.jpg';
