@@ -1,0 +1,245 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 头部样式 */
+.header {
+    background-color: #4468D7;
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* 主容器 */
+.main-container {
+    display: flex;
+    flex: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 220px;
+    background-color: #fff;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+}
+
+.menu-item:hover {
+    background-color: rgba(68, 104, 215, 0.05);
+    color: #4468D7;
+}
+
+.menu-item.active {
+    background-color: rgba(68, 104, 215, 0.1);
+    color: #4468D7;
+    border-left-color: #4468D7;
+}
+
+.menu-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* 主内容区域 */
+.main-content {
+    flex: 1;
+    padding: 30px;
+}
+
+/* 顶部标题区域 */
+.hero-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-title {
+    font-size: 32px;
+    color: #1d1d1f;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #86868b;
+}
+
+/* 功能卡片 */
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* 单一功能卡片样式 */
+.single-feature {
+    display: flex;
+    justify-content: center;
+}
+
+.single-feature .feature-card {
+    max-width: 600px;
+    padding: 40px;
+}
+
+.feature-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(68, 104, 215, 0.1);
+    border-radius: 50%;
+}
+
+.feature-icon img {
+    width: 40px;
+    height: 40px;
+    color: #4468D7;
+}
+
+.feature-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 16px;
+}
+
+.feature-desc {
+    color: #86868b;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.feature-button {
+    display: inline-block;
+    background-color: #4468D7;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.feature-button:hover {
+    background-color: #3755b8;
+}
+
+/* 页脚样式 */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #fff;
+    color: #86868b;
+    font-size: 14px;
+    margin-top: auto;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+    }
+    
+    .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .menu-item {
+        padding: 10px 15px;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+    }
+    
+    .menu-item.active {
+        border-left-color: transparent;
+        border-bottom-color: #4468D7;
+    }
+    
+    .single-feature .feature-card {
+        padding: 25px;
+    }
+} 

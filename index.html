@@ -3,89 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>图片压缩工具</title>
-    <link rel="stylesheet" href="style.css">
+    <title>图像魔方 - 图片压缩工具</title>
+    <link rel="stylesheet" href="homepage.css">
 </head>
 <body>
     <!-- 顶部导航栏 -->
     <header class="header">
         <div class="container">
-            <h1 class="logo">图片压缩工具</h1>
+            <div class="logo-container">
+                <img src="assets/icons/logo.svg" alt="图像魔方" class="logo-icon">
+                <h1 class="logo">图像魔方</h1>
+            </div>
         </div>
     </header>
 
-    <!-- 主要内容区 -->
-    <main class="main">
-        <div class="container">
-            <div class="content-wrapper">
-                <!-- 左侧控制面板 -->
-                <div class="control-panel">
-                    <!-- 上传区域 -->
-                    <div class="upload-section">
-                        <div class="upload-area" id="uploadArea">
-                            <input type="file" id="fileInput" accept="image/*" class="file-input">
-                            <div class="upload-placeholder">
-                                <img src="assets/icons/upload.svg" alt="上传图标" class="upload-icon">
-                                <p>点击或拖拽图片到此处上传</p>
-                            </div>
-                        </div>
+    <div class="main-container">
+        <!-- 左侧菜单栏 -->
+        <aside class="sidebar">
+            <nav class="menu">
+                <a href="index.html" class="menu-item active">
+                    <img src="assets/icons/home.svg" alt="首页" class="menu-icon">
+                    <span>首页</span>
+                </a>
+                <a href="compress.html" class="menu-item">
+                    <img src="assets/icons/compress.svg" alt="图片压缩" class="menu-icon">
+                    <span>图片压缩</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- 主要内容区 -->
+        <main class="main-content">
+            <div class="hero-section">
+                <h1 class="hero-title">图像魔方：专业图片压缩工具</h1>
+                <p class="hero-subtitle">轻松压缩您的图片，提升网站性能</p>
+            </div>
+
+            <!-- 功能模块卡片区域 -->
+            <div class="feature-cards single-feature">
+                <!-- 图片压缩 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="assets/icons/compress.svg" alt="图片压缩">
                     </div>
-
-                    <!-- 压缩设置 -->
-                    <div class="compression-settings">
-                        <h2>压缩设置</h2>
-                        <div class="setting-item">
-                            <label for="quality">压缩质量</label>
-                            <input type="range" id="quality" min="0" max="100" value="80">
-                            <span id="qualityValue">80%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 右侧预览区 -->
-                <div class="preview-section">
-                    <div class="preview-container">
-                        <!-- 原图预览 -->
-                        <div class="preview-box">
-                            <h3>原图</h3>
-                            <div class="image-container">
-                                <img id="originalImage" src="assets/images/placeholder.svg" alt="原图预览">
-                            </div>
-                            <div class="file-info">
-                                <span>文件大小：</span>
-                                <span id="originalSize">0 KB</span>
-                            </div>
-                        </div>
-
-                        <!-- 压缩后预览 -->
-                        <div class="preview-box">
-                            <h3>压缩后</h3>
-                            <div class="image-container">
-                                <img id="compressedImage" src="assets/images/placeholder.svg" alt="压缩后预览">
-                            </div>
-                            <div class="file-info">
-                                <span>文件大小：</span>
-                                <span id="compressedSize">0 KB</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 下载按钮 -->
-                    <button id="downloadBtn" class="download-btn" disabled>
-                        下载压缩后的图片
-                    </button>
+                    <h3 class="feature-title">图片压缩</h3>
+                    <p class="feature-desc">
+                        高效压缩图片文件大小，保持画质的同时优化加载速度，提升网站性能。
+                        支持PNG、JPG等常见图片格式，可调节压缩质量，实时预览压缩效果。
+                    </p>
+                    <a href="compress.html" class="feature-button">开始使用</a>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </div>
 
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
-            <p>© 2024 图片压缩工具 - 简单易用的在线图片压缩服务</p>
+            <p>© 2024 图像魔方 - 专业的图片压缩工具</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html> 
